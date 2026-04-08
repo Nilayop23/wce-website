@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hostels | WCE Sangli</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --wce-blue: #003366; --wce-red: #cc0000; --light-bg: #f8f9fa; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background: var(--light-bg); }
+        header { background: white; border-bottom: 3px solid var(--wce-blue); padding: 15px 10%; }
+        nav { display: flex; justify-content: space-between; align-items: center; }
+        .logo-text h1 { font-size: 22px; color: var(--wce-blue); text-decoration: none; }
+        .nav-links { list-style: none; display: flex; }
+        .nav-links li { margin-left: 20px; }
+        .nav-links a { text-decoration: none; color: #333; font-weight: 600; }
+        .container { padding: 50px 10%; }
+        .section-title { border-left: 5px solid var(--wce-blue); padding-left: 15px; margin-bottom: 30px; color: var(--wce-blue); }
+        .hostel-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .hostel-card { background: white; padding: 20px; border-radius: 8px; text-align: center; border: 1px solid #ddd; }
+        .hostel-card i { font-size: 40px; color: var(--wce-red); margin-bottom: 10px; }
+        .hostel-card h4 { color: var(--wce-blue); margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" style="text-decoration:none" class="logo-text"><h1>WCE SANGLI</h1></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="hostels.html" style="color:var(--wce-red)">Hostels</a></li>
+                <li><a href="campus.html">Campus</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h2 class="section-title">Residential Facilities</h2>
+        <div class="hostel-info">
+            <div class="hostel-card"><i class="fas fa-bed"></i><h4>8 Hostels</h4><p>Separate blocks for Boys and Girls.</p></div>
+            <div class="hostel-card"><i class="fas fa-utensils"></i><h4>Mega Mess</h4><p>Hygenic vegetarian & non-veg food.</p></div>
+            <div class="hostel-card"><i class="fas fa-wifi"></i><h4>Wi-Fi</h4><p>High-speed internet in all rooms.</p></div>
+            <div class="hostel-card"><i class="fas fa-dumbbell"></i><h4>Gym</h4><p>Equipped with modern fitness machines.</p></div>
+        </div>
+    </div>
+</body>
+</html>

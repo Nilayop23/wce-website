@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Walchand College of Engineering | Sangli</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+
+:root{
+--wce-blue:#003366;
+--wce-red:#cc0000;
+--light-bg:#f8f9fa;
+--white:#ffffff;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:var(--light-bg);
+line-height:1.6;
+}
+
+/* HEADER */
+
+header{
+background:white;
+border-bottom:3px solid var(--wce-blue);
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.top-bar{
+background:var(--wce-blue);
+color:white;
+padding:8px 10%;
+display:flex;
+justify-content:space-between;
+font-size:13px;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:10px 10%;
+}
+
+.logo-container{
+display:flex;
+align-items:center;
+gap:15px;
+text-decoration:none;
+}
+
+.college-logo{
+height:60px;
+}
+
+.logo-text h1{
+font-size:20px;
+color:var(--wce-blue);
+}
+
+.logo-text p{
+font-size:11px;
+color:var(--wce-red);
+font-weight:bold;
+}
+
+.nav-links{
+list-style:none;
+display:flex;
+}
+
+.nav-links li{
+margin-left:20px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:#333;
+font-weight:600;
+font-size:14px;
+}
+
+.nav-links a:hover{
+color:var(--wce-red);
+}
+
+/* SEARCH BAR */
+
+.search-box{
+position:relative;
+margin-left:20px;
+}
+
+.search-box input{
+padding:7px 12px;
+border-radius:20px;
+border:1px solid #ccc;
+width:200px;
+}
+
+#searchResults{
+position:absolute;
+top:40px;
+left:0;
+background:white;
+width:100%;
+border-radius:6px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+display:none;
+}
+
+.result-item{
+padding:10px;
+border-bottom:1px solid #eee;
+cursor:pointer;
+}
+
+.result-item:hover{
+background:#f2f2f2;
+}
+
+/* HERO */
+
+.hero{
+height:500px;
+background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('saraswati_idol.jpg');
+background-size:cover;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+text-align:center;
+}
+
+.hero h2{
+font-size:3rem;
+}
+
+.hero p{
+font-size:1.2rem;
+}
+
+/* NEWS */
+
+.news-ticker{
+background:#eee;
+padding:10px 10%;
+display:flex;
+align-items:center;
+}
+
+.news-label{
+background:var(--wce-red);
+color:white;
+padding:5px 15px;
+margin-right:20px;
+border-radius:4px;
+}
+
+/* CONTENT */
+
+.container{
+padding:60px 10%;
+}
+
+.section-title{
+border-left:5px solid var(--wce-blue);
+padding-left:15px;
+margin-bottom:40px;
+color:var(--wce-blue);
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:8px;
+box-shadow:0 4px 10px rgba(0,0,0,0.05);
+}
+
+.card:hover{
+transform:translateY(-5px);
+border-bottom:3px solid var(--wce-red);
+}
+
+.card h3{
+color:var(--wce-blue);
+}
+
+.btn{
+display:inline-block;
+margin-top:15px;
+color:var(--wce-red);
+text-decoration:none;
+font-weight:bold;
+}
+
+/* FOOTER */
+
+footer{
+background:#222;
+color:white;
+padding:30px 10%;
+text-align:center;
+margin-top:50px;
+}
+
+/* CHATBOT */
+
+.chatbot-button{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#003366;
+color:white;
+width:60px;
+height:60px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:24px;
+cursor:pointer;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
+}
+
+.chatbot-container{
+position:fixed;
+bottom:90px;
+right:20px;
+width:300px;
+background:white;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+display:none;
+flex-direction:column;
+overflow:hidden;
+}
+
+.chat-header{
+background:#003366;
+color:white;
+padding:10px;
+display:flex;
+justify-content:space-between;
+}
+
+.chat-body{
+padding:10px;
+height:250px;
+overflow-y:auto;
+background:#f5f5f5;
+}
+
+.bot-message{
+background:white;
+padding:8px;
+border-radius:6px;
+margin-bottom:8px;
+}
+
+.user-message{
+background:#cc0000;
+color:white;
+padding:8px;
+border-radius:6px;
+margin-bottom:8px;
+text-align:right;
+}
+
+.chat-input{
+display:flex;
+border-top:1px solid #ddd;
+}
+
+.chat-input input{
+flex:1;
+border:none;
+padding:10px;
+}
+
+.chat-input button{
+background:#003366;
+color:white;
+border:none;
+padding:10px;
+cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="top-bar">
+<span><i class="fas fa-phone"></i> +91 1234567890</span>
+<span><i class="fas fa-envelope"></i> info@walchandsangli.ac.in</span>
+</div>
+
+<header>
+
+<nav>
+
+<a href="index.html" class="logo-container">
+<img src="walchand_logo.png" class="college-logo">
+<div class="logo-text">
+<h1>WALCHAND COLLEGE OF ENGINEERING</h1>
+<p>AN AUTONOMOUS INSTITUTE | ESTD. 1947</p>
+</div>
+</a>
+
+<ul class="nav-links">
+<li><a href="#">Home</a></li>
+<li><a href="academics.html">Academics</a></li>
+<li><a href="research.html">Research</a></li>
+<li><a href="departments.html">Departments</a></li>
+<li><a href="placements.html">Placements</a></li>
+<li><a href="hostels.html">Hostels</a></li>
+<li><a href="campus.html">Campus</a></li>
+</ul>
+
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="Search WCE...">
+<div id="searchResults"></div>
+</div>
+
+</nav>
+
+</header>
+
+<section class="hero">
+<div>
+<h2>Welcome to WCE Sangli</h2>
+<p>Empowering Engineers Since 1947</p>
+</div>
+</section>
+
+<div class="news-ticker">
+<div class="news-label">LATEST NEWS</div>
+
+<marquee>
+Admission 2026 open | AI Workshop Monday | 15+ companies visiting campus
+</marquee>
+
+</div>
+
+<div class="container">
+
+<h2 class="section-title">Explore Our Institute</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Academics</h3>
+<p>Top-tier B.Tech and M.Tech programs.</p>
+<a href="academics.html" class="btn">View Details →</a>
+</div>
+
+<div class="card">
+<h3>Placements</h3>
+<p>Excellent placement record with top recruiters.</p>
+<a href="placements.html" class="btn">View Statistics →</a>
+</div>
+
+<div class="card">
+<h3>Departments</h3>
+<p>CSE, IT, Mechanical, Civil and Electrical Engineering.</p>
+<a href="departments.html" class="btn">Explore →</a>
+</div>
+
+</div>
+
+</div>
+
+<footer>
+<p>© 2026 Walchand College of Engineering, Sangli</p>
+</footer>
+
+<!-- CHATBOT -->
+
+<div class="chatbot-button" onclick="toggleChatbot()">
+<i class="fas fa-comments"></i>
+</div>
+
+<div class="chatbot-container" id="chatbot">
+
+<div class="chat-header">
+WCE Assistant
+<span onclick="toggleChatbot()">✖</span>
+</div>
+
+<div class="chat-body" id="chatBody">
+<div class="bot-message">
+Hello 👋 Ask me about Admissions, Departments, Placements or Hostels.
+</div>
+</div>
+
+<div class="chat-input">
+<input type="text" id="userInput" placeholder="Ask something...">
+<button onclick="sendMessage()">Send</button>
+</div>
+
+</div>
+
+<script>
+
+/* SEARCH */
+
+const pages=[
+{name:"Academics",url:"academics.html"},
+{name:"Research",url:"research.html"},
+{name:"Departments",url:"departments.html"},
+{name:"Placements",url:"placements.html"},
+{name:"Hostels",url:"hostels.html"},
+{name:"Campus",url:"campus.html"}
+];
+
+const input=document.getElementById("searchInput");
+const results=document.getElementById("searchResults");
+
+input.addEventListener("keyup",function(){
+
+let query=input.value.toLowerCase();
+results.innerHTML="";
+
+if(query.length===0){
+results.style.display="none";
+return;
+}
+
+let filtered=pages.filter(page=>page.name.toLowerCase().includes(query));
+
+filtered.forEach(page=>{
+let div=document.createElement("div");
+div.classList.add("result-item");
+div.innerText=page.name;
+div.onclick=()=>window.location=page.url;
+results.appendChild(div);
+});
+
+results.style.display="block";
+
+});
+
+/* CHATBOT */
+
+function toggleChatbot(){
+let bot=document.getElementById("chatbot");
+bot.style.display = bot.style.display==="flex" ? "none" : "flex";
+}
+
+function sendMessage(){
+
+let input=document.getElementById("userInput");
+let text=input.value.toLowerCase();
+
+if(text==="") return;
+
+let chat=document.getElementById("chatBody");
+
+chat.innerHTML+=`<div class="user-message">${text}</div>`;
+
+let response="Sorry, I didn't understand.";
+
+if(text.includes("admission"))
+response=`Admissions info: <a href="academics.html">Open Academics</a>`;
+
+else if(text.includes("placement"))
+response=`See placements: <a href="placements.html">Placements Page</a>`;
+
+else if(text.includes("department"))
+response=`Departments list: <a href="departments.html">Open Departments</a>`;
+
+else if(text.includes("hostel"))
+response=`Hostel info: <a href="hostels.html">View Hostels</a>`;
+
+chat.innerHTML+=`<div class="bot-message">${response}</div>`;
+
+input.value="";
+
+chat.scrollTop=chat.scrollHeight;
+
+}
+
+</script>
+
+</body>
+</html>

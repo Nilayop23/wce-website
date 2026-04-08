@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placements | WCE Sangli</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --wce-blue: #003366; --wce-red: #cc0000; --light-bg: #f8f9fa; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background: var(--light-bg); line-height: 1.6; }
+        
+        /* Navigation (Same as Home) */
+        header { background: white; border-bottom: 3px solid var(--wce-blue); padding: 15px 10%; }
+        nav { display: flex; justify-content: space-between; align-items: center; }
+        .logo-text h1 { font-size: 22px; color: var(--wce-blue); text-decoration: none; }
+        .nav-links { list-style: none; display: flex; }
+        .nav-links li { margin-left: 20px; }
+        .nav-links a { text-decoration: none; color: #333; font-weight: 600; font-size: 14px; }
+
+        .container { padding: 50px 10%; }
+        .section-title { border-left: 5px solid var(--wce-blue); padding-left: 15px; margin-bottom: 30px; color: var(--wce-blue); }
+
+        /* Placement Specific Styling */
+        table { width: 100%; border-collapse: collapse; background: white; margin-top: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        th, td { padding: 15px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background: var(--wce-blue); color: white; }
+        .stat-card { background: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; display: flex; justify-content: space-around; text-align: center; }
+        .stat-item h3 { color: var(--wce-red); font-size: 2rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html" style="text-decoration:none" class="logo-text"><h1>WCE SANGLI</h1></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="academics.html">Academics</a></li>
+                <li><a href="placements.html" style="color:var(--wce-red)">Placements</a></li>
+                <li><a href="departments.html">Departments</a></li>
+                <li><a href="hostels.html">Hostels</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">Training & Placement Cell</h2>
+        
+        <div class="stat-card">
+            <div class="stat-item"><h3>450+</h3><p>Offers Made (2025)</p></div>
+            <div class="stat-item"><h3>₹1.5 Cr</h3><p>Highest Package</p></div>
+            <div class="stat-item"><h3>₹9.2 LPA</h3><p>Average Package</p></div>
+        </div>
+
+        <h3>Placement Statistics (Last 3 Years)</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Year</th>
+                    <th>Total Students</th>
+                    <th>Students Placed</th>
+                    <th>Placement %</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>2024-25</td><td>510</td><td>465</td><td>91%</td></tr>
+                <tr><td>2023-24</td><td>495</td><td>440</td><td>89%</td></tr>
+                <tr><td>2022-23</td><td>480</td><td>456</td><td>95%</td></tr>
+            </tbody>
+        </table>
+
+        <h3 style="margin-top:40px;">Our Top Recruiters</h3>
+        <p>Google, Microsoft, Amazon, Rakuten, NVIDIA, TATA Motors, L&T, Infosys, TCS, and many more.</p>
+    </div>
+
+</body>
+</html>
